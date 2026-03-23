@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Project } from '../../models/project';
@@ -13,6 +13,8 @@ import { PROJECTS } from '../../data/projects.data';
 })
 export class ProjectDetailComponent implements OnInit {
   project: Project | undefined;
+  isLightboxOpen = false;
+  currentImageIndex = 0;
 
   constructor(private route: ActivatedRoute) {}
 
@@ -29,4 +31,52 @@ export class ProjectDetailComponent implements OnInit {
       }
     });
   }
+
+  // ABRIR: Recibe el índice de la foto clickeada
+  openLightbox(index: number) {
+    this.currentImageIndex = index;
+    this.isLightboxOpen = true;
+    // Bloquear scroll del body cuando se abre
+    document.body.style.overflow = 'hidden';
+  }
+
+  // CERRAR
+  closeLightbox() {
+    this.isLightboxOpen = false;
+    // Desbloquear scroll
+    document.body.style.overflow = 'auto';
+  }
+
+  // SIGUIENTE IMAGEN
+  nextImage() {
+    if (!this.project?.gallery) return;
+    // Si es la última, vuelve a la 0 (carrusel infinito)
+    if (this.currentImageIndex === this.project.gallery.length - 1) {
+      this.currentImageIndex = 0;
+    } else {
+      this.currentImageIndex++;
+    }
+  }
+
+  // IMAGEN ANTERIOR
+  prevImage() {
+    if (!this.project?.gallery) return;
+    // Si es la primera, va a la última
+    if (this.currentImageIndex === 0) {
+      this.currentImageIndex = this.project.gallery.length - 1;
+    } else {
+      this.currentImageIndex--;
+    }
+  }
+
+  // (Opcional) CONTROL POR TECLADO
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (!this.isLightboxOpen) return;
+    
+    if (event.key === 'Escape') this.closeLightbox();
+    if (event.key === 'ArrowRight') this.nextImage();
+    if (event.key === 'ArrowLeft') this.prevImage();
+  }
+  
 }

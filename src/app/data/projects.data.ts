@@ -5,22 +5,25 @@ export const PROJECTS: Project[] = [
     id: 'tracking-logistico',
     title: 'Tracking Logístico',
     description: 'Ecosistema Web y Móvil para gestión de flotas.',
-    fullDescription: `Desarrollé una solución integral para resolver la falta de control en tiempo real de una empresa de transporte. 
-      El sistema permite a los administradores monitorear viajes activos, gestionar choferes y exportar reportes de auditoría.
+    fullDescription: `
+      Como Lead Full Stack Engineer, lideré la arquitectura y desarrollo de esta solución integral para una empresa de transporte. Fue un proyecto colaborativo donde trabajé junto a la diseñadora Romina Botana, quien estuvo a cargo del diseño visual y UX.
       
-      Para la aplicación móvil, prioricé un diseño minimalista y libre de distracciones. Consciente de que el usuario opera desde la cabina de un camión, la interfaz evita la saturación de información, presentando solo los controles esenciales, logrando una interacción ágil. `,
+      El sistema permite monitorear viajes en tiempo real, gestionar choferes y generar reportes de auditoría. Para la app móvil, priorizamos una interfaz minimalista y libre de distracciones, ideal para el uso en cabina.
+
+      *Demo Disclaimer: El enlace proporcionado despliega una versión antigua (Legacy) con fines puramente demostrativos. La interfaz actual y las funcionalidades de producción vigentes son las que se reflejan en las capturas de la galería de imágenes.*
+    `,
     tags: ['Angular', 'Django', 'MySQL', 'ANDROID-STUDIO'],
     image: 'assets/logitrack.png', 
-    link: '#',
+    link: 'https://frontgestionviajes.vercel.app/#inicio', 
     gallery: [
-      { src: 'assets/admin.jpg', caption: 'Panel de Administración: Gestión de flota.' },
-      { src: 'assets/chofer.jfif', caption: 'App Móvil: Reporte de viajes.' }
+      { src: 'assets/logitrack/admin.png', caption: 'Panel de Administración: Gestión de flota.' },
+      { src: 'assets/logitrack/chofer.jfif', caption: 'App Móvil: Reporte de viajes.' }
     ],
     features: [
+      'Team Leadership: Rol de Lead Full Stack definiendo la arquitectura técnica.',
+      'UI/UX Design: Diseño visual de alta fidelidad realizado por Romina Botana.',
       'Arquitectura Híbrida: Web (Admin) + App Android (Chofer).',
-      'Optimización: Batching de coordenadas GPS en LocalStorage.',
-      'Seguridad: Autenticación JWT y roles diferenciados.',
-      'Reporting: Reportes exportables para auditoría.'
+      'Optimización: Batching de coordenadas GPS en LocalStorage.'
     ]
   },
   {
@@ -40,6 +43,25 @@ export const PROJECTS: Project[] = [
       'Canvas Interactivo: Herramientas de dibujo (Lápiz, Goma) sobre la imagen.',
       'Optimización: Algoritmo de reducción de puntos para mejorar el rendimiento del navegador.',
       'Gestión de Estado: Sistema de Undo/Redo (Ctrl+Z) personalizado.'
+    ]
+  },
+  {
+    id: 'matesferba-ecommerce',
+    title: 'MatesFerba E-commerce',
+    description: 'Personalización avanzada en Tiendanube.',
+    fullDescription: `
+      Implementación de una tienda online para la venta de mates y accesorios utilizando la plataforma Tiendanube.
+      El desafío principal radicó en las restricciones del plan básico, que impide el acceso al código HTML y JavaScript.
+      Para lograr el diseño solicitado por el cliente, realicé una reingeniería visual completa de la plantilla predeterminada, utilizando exclusivamente CSS avanzado para manipular el layout y la estética sin tocar la estructura base.
+    `,
+    tags: ['CSS3', 'Tiendanube', 'E-commerce', 'UI Design'],
+    image: 'assets/matesferba.png', 
+    link: '#', 
+    gallery: [],
+    features: [
+      'CSS Architecture: Uso intensivo de selectores avanzados para reestructurar la interfaz visual.',
+      'Constraint Solving: Adaptación total de la identidad de marca en un entorno de código cerrado (SaaS).',
+      'API: integraciones con métodos de pago.'
     ]
   },
   {
@@ -63,16 +85,19 @@ export const PROJECTS: Project[] = [
   {
     id: 'simulador-campus',
     title: 'Simulador Campus',
-    description: 'Gemelo digital interactivo.',
+    description: 'Gemelo digital interactivo multijugador.',
     fullDescription: `
-      Simulación 3D del campus universitario creada en Unity. 
-      Mi rol principal fue el desarrollo de la Interfaz de Usuario (UI) y los sistemas de navegación inteligente para guiar a los usuarios entre edificios.
+      Simulación 3D del campus universitario creada en Unity, con capacidad multijugador en tiempo real que permite a varios usuarios recorrer el mismo mundo simultáneamente.
+      Mi rol principal fue el desarrollo de la Interfaz de Usuario (UI) y los sistemas de navegación inteligente.
+      
+      *Nota de instalación: El enlace descarga una Build de Windows en formato .rar. Al tratarse de un ejecutable académico sin firma digital, es posible que Windows o el navegador muestren advertencias de seguridad estándar. El archivo es seguro y debe ejecutarse omitiendo dichas alertas.*
     `,
-    tags: ['Unity', '3D-Modeling', 'UI', 'C#'],
+    tags: ['Unity', '3D-Modeling', 'UI', 'C#', 'Multiplayer'],
     image: 'assets/campus.png',
-    link: '#',
+    link: 'https://drive.google.com/file/d/15cWx8NzAKKgdZYXqe6u_AcUHEaWyno_L/view?usp=sharing',
     gallery: [],
     features: [
+      'Multiplayer: Sincronización en red para compartir el entorno con otros usuarios.',
       'Pathfinding: Sistema de navegación NavMesh que respeta veredas y caminos.',
       'UI Contextual: Mapas dinámicos que cambian al entrar a edificios.',
       'Minimapa: Radar en tiempo real de la posición del usuario.'
@@ -84,7 +109,7 @@ export const PROJECTS: Project[] = [
     description: 'Integración WhatsApp Business.',
     fullDescription: `
       Solución de automatización para una empresa de venta de equipamiento 4x4.
-      Integra la API de WhatsApp Business para responder consultas frecuentes y calificar leads automáticamente antes de derivarlos a un vendedor humano.
+      Integra la API de WhatsApp Business para responder consultas frecuentes, notificar a los vendedores, guardar datos de leads y crear campañas masivas.
     `,
     tags: ['API', 'Botconversa', 'Automation'],
     image: 'assets/botconversa.png',
@@ -102,7 +127,7 @@ export const PROJECTS: Project[] = [
     description: 'Automatización con Python.',
     fullDescription: `
       Colección de scripts desarrollados para automatizar tareas repetitivas y conectar servicios.
-      Incluye herramientas para procesar datos de APIs de música y cine, y generar playlists automáticas.
+      Realice herramientas para procesar datos de APIs de música y cine, y generar playlists automáticas.
     `,
     tags: ['Python', 'Spotify API', 'ETL'],
     image: 'assets/scripts.png',
@@ -113,5 +138,6 @@ export const PROJECTS: Project[] = [
       'Scripting: Automatización de flujos de trabajo personales.',
       'Manejo de Datos: Parsing y normalización de información JSON.'
     ]
-  }
+  },
+  
 ];
