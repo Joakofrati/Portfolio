@@ -46,6 +46,31 @@ export const PROJECTS: Project[] = [
     ]
   },
   {
+    id: 'musical-grimorio',
+    title: 'Grimorio Musical',
+    description: 'Análisis de datos y estadísticas musicales con Spotify API.',
+    fullDescription: `
+      Aplicación web y móvil orientada al análisis de hábitos musicales, integrada directamente con la API de Spotify. 
+      
+      El sistema cuenta con endpoints de backend desarrollados en Django para procesar datos, calcular estadísticas detalladas y generar visualizaciones interactivas de redes de artistas (radares e inferencias). Los usuarios pueden descubrir el "título" de su perfil musical, crear diferentes formatos de notas (análisis de instrumentos, recordatorios genéricos o para escuchar después) y utilizar un expansor de playlists para completar discografías de artistas pendientes. Finalmente, permite generar un "wrapped" con estadísticas músicales y uso de la aplicación, optimizado para ser compartido con amigos en redes sociales.
+    `,
+    tags: ['Angular', 'Ionic', 'Django', 'Capacitor', 'Spotify API'],
+    image: 'assets/musical-grimorio.png', // Puedes ajustar el nombre de la imagen cuando la tengas
+    link: 'https://musical-grimorio-three.vercel.app/login', 
+    gallery: [
+      { src: 'assets/musical-grimorio/diario.png', caption: 'Diario: Creación de notas sobre la experiencia musical en diferentes formatos.' },
+      { src: 'assets/musical-grimorio/expansor.png', caption: 'Expansor de playlist: Mira el mapa de la playlist y explora caminos para expandirla.' },
+      { src: 'assets/musical-grimorio/arquetipos.jfif', caption: 'Arquetipos: Ejemplos de diferentes arquetipos musicales segun las estadísticas y hábitos de la persona.' },
+    ],
+    features: [
+      'Análisis de Datos: Cálculos estadísticos, inferencias de perfiles musicales y visualizaciones de grafos interactivos.',
+      'Gestor de Notas: Herramienta para crear apuntes sobre instrumentos, análisis de canciones o listas de pendientes.',
+      'Playlist Expander: Algoritmo que sugiere y agrupa canciones para terminar de explorar artistas pendientes.',
+      'Social Sharing: Generación de un "wrapped" interactivo diseñado para ser compartido en redes sociales.',
+      'API Integration: Conexión segura con Spotify y Google vía OAuth, respaldado por un backend en Django.'
+    ]
+  },
+  {
     id: 'matesferba-ecommerce',
     title: 'MatesFerba E-commerce',
     description: 'Personalización avanzada en Tiendanube.',
